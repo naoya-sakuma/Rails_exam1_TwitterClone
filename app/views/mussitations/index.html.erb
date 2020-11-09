@@ -4,10 +4,11 @@
   <tr>
     <th>投稿</th>
   </tr>
-<% @mussitation.each do |blog| %>
+<% @mussitation.each do |mussitation| %>
   <tr>
-    <td><%= blog.content %></td>
+    <td><%= mussitation.content %></td>
+    <td><%= link_to "ブログを編集する", edit_mussitation_path(mussitation.id) %></td>
   </tr>
 <% end %>
-<%= link_to '新しくブログを投稿する', new_mussitation_path %>
 </table>
+<%= link_to '新しくブログを投稿する', new_mussitation_path %>

@@ -13,6 +13,17 @@ class MussitationsController < ApplicationController
       render :new
     end
   end
+  def edit
+    @mussitation = Mussitation.find(params[:id])
+  end
+  def update
+    @mussitation = Mussitation.find(params[:id])
+    if @mussitation.update(mussitation_params)
+      redirect_to mussitations_path, notice: "ブログを編集しました！"
+    else
+      render :edit
+    end
+  end
   private
   def mussitation_params
     params.require(:mussitation).permit(:content)
