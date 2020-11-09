@@ -1,5 +1,5 @@
 class MussitationsController < ApplicationController
-before_action :set_mussitation, only: [:edit, :update]
+before_action :set_mussitation, only: [:edit, :update, :destroy]
   def index
     @mussitation = Mussitation.all
   end
@@ -20,11 +20,16 @@ before_action :set_mussitation, only: [:edit, :update]
   def update
     #@mussitation = Mussitation.find(params[:id])
     if @mussitation.update(mussitation_params)
-      redirect_to mussitations_path, notice: "ブログを編集しました！"
+      redirect_to mussitations_path, notice: "投稿を編集しました！"
     else
       render :edit
     end
   end
+  def destroy
+    @mussitation.destroy
+    redirect_to mussitations_path, notice:"投稿を削除しました！"
+  end
+
   private
   def mussitation_params
     params.require(:mussitation).permit(:content)
