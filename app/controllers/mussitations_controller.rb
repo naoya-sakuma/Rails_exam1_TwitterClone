@@ -8,10 +8,14 @@ before_action :set_mussitation, only: [:edit, :update, :destroy]
   end
   def create
     @mussitation = Mussitation.new(mussitation_params)
-    if @mussitation.save
-      redirect_to mussitations_path, notice: "投稿しました！"
-    else
+    if params[:back]
       render :new
+    else
+      if @mussitation.save
+        redirect_to mussitations_path, notice: "投稿しました！"
+      else
+        render :new
+      end
     end
   end
   def edit
@@ -31,6 +35,7 @@ before_action :set_mussitation, only: [:edit, :update, :destroy]
   end
   def confirm
     @mussitation = Mussitation.new(mussitation_params)
+    render :new if @mussitation.invalid?
   end
 
   private

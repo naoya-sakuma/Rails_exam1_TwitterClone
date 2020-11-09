@@ -3,5 +3,5 @@
   <%= form.hidden_field :content %>
   <p>本文:<%= @mussitation.content %></p>
   <%= form.submit  "登録する" %>
-  <%= link_to '戻る', :back %>
+  <%= form.submit '戻る', name: 'back' %>
 <% end %>
