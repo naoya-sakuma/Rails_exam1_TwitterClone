@@ -1,3 +1,40 @@
-// Place all the styles related to the mussitations controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+header{
+  position: relative;
+  background-color: rgba(0, 172, 237, 1);
+  height: 120px;
+  margin: 0px;
+  padding: 0px;
+  color: white;
+  font-family: monospace;
+  font-size: 100px;
+  text-align: center;
+}
+body {
+  min-height: 100vh;
+  text-align: center;
+}
+table{
+  margin-left: auto;
+  margin-right: auto;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0, 172, 237, 1);
+  height: 120px;
+  margin: 0px;
+  padding: 0px;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+div.notice {
+  text-align: center;
+}
+.post_title{
+  font-size: 25px;
+  height: 100px;
+  text-align: center;
+  background-color: rgba(0, 172, 237, 1);
+}
