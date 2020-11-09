@@ -18,11 +18,12 @@ before_action :set_mussitation, only: [:edit, :update, :destroy]
       end
     end
   end
+  def show
+    @mussitation = Mussitation.find(params[:id])
+  end
   def edit
-    #@mussitation = Mussitation.find(params[:id])
   end
   def update
-    #@mussitation = Mussitation.find(params[:id])
     if @mussitation.update(mussitation_params)
       redirect_to mussitations_path, notice: "投稿を編集しました！"
     else
