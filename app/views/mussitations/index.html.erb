@@ -7,8 +7,8 @@
 <% @mussitation.each do |mussitation| %>
   <tr>
     <td><%= mussitation.content %></td>
-    <td><%= link_to "編集", edit_mussitation_path(mussitation.id) %></td>
-    <td><%= link_to '削除', mussitation_path(mussitation.id), method: :delete %></td>
+    <td><%= link_to "編集", edit_mussitation_path(mussitation.id), data: { confirm: '本当に編集していいですか？' } %></td>
+    <td><%= link_to '削除', mussitation_path(mussitation.id), method: :delete, data: { confirm: '本当に削除していいですか？' } %></td>
   </tr>
 <% end %>
 </table>
