@@ -1,0 +1,2 @@
+module MussitationsHelper
+end

@@ -1,0 +1,2 @@
+class Mussitation < ApplicationRecord
+end
