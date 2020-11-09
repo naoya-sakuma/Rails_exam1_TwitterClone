@@ -1,0 +1,12 @@
+<h1>投稿一覧</h1>
+<table>
+  <tr>
+    <th>投稿</th>
+  </tr>
+<% @mussitation.each do |blog| %>
+  <tr>
+    <td><%= blog.content %></td>
+  </tr>
+<% end %>
+<%= link_to '新しくブログを投稿する', new_mussitation_path %>
+</table>
