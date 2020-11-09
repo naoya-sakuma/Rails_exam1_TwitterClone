@@ -29,6 +29,9 @@ before_action :set_mussitation, only: [:edit, :update, :destroy]
     @mussitation.destroy
     redirect_to mussitations_path, notice:"投稿を削除しました！"
   end
+  def confirm
+    @mussitation = Mussitation.new(mussitation_params)
+  end
 
   private
   def mussitation_params

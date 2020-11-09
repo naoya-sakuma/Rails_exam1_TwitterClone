@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  resources :mussitations
+  resources :mussitations do
+    collection do
+      post :confirm
+    end
+  end
 end
