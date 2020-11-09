@@ -6,10 +6,13 @@ class MussitationsController < ApplicationController
     @mussitation = Mussitation.new
   end
   def create
-    Mussitation.create(mussitation_params)
-    redirect_to new_mussitation_path
+    @mussitation = Mussitation.new(mussitation_params)
+    if @mussitation.save
+      redirect_to mussitations_path, notice: "投稿しました！"
+    else
+      render :new
+    end
   end
-
   private
   def mussitation_params
     params.require(:mussitation).permit(:content)
