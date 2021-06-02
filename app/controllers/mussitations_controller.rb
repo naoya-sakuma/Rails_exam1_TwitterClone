@@ -32,7 +32,7 @@ before_action :set_mussitation, only: [:edit, :update, :destroy]
   end
   def destroy
     @mussitation.destroy
-    redirect_to mussitations_path, notice:"投稿を削除しました！"
+    redirect_to mussitation_path, notice:"投稿を削除しました！"
   end
   def confirm
     @mussitation = Mussitation.new(mussitation_params)
