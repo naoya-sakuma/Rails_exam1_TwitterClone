@@ -5,7 +5,7 @@
 <%= form_with(model: @mussitation, local: true) do |form| %>
   <%= form.hidden_field :content %>
   <p>投稿内容:<%= @mussitation.content %></p>
-  <%= form.submit  "登録する" %>
+  <%= form.submit  "登録" %>
   <%= form.submit '戻る', name: 'back' %>
 <% end %>
 <footer>
